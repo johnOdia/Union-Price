@@ -1,0 +1,18 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.header{
+    background-color: whitesmoke;
+    opacity: 0.7;
+    color:blue;
+    height: 40px; 
+    padding: 0.5em;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 0 5px 0 rgb(219, 218, 218);
+}
+
