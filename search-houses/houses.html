@@ -3,23 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Union Price App</title>
+    <title>Search</title>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="header">Union Price</div>
-        <h1>Get the worth of your next house</h1>
-        <div class="list-item">
-            <ul>
-                <li><a href="#" class="specify">Rent</a></li>
-                <li><a href="#" class="specify">Buy</a></li>
-            </ul>
-        </div>
-     <div class="box">
+    <div class="header">Union Price</div>
+    <div class="box">
         <div class="dropdown">
             <button class="dropbtn">Location <i class="fas fa-caret-down"></i></button>
             <div class="dropdown-content">
@@ -39,6 +31,7 @@
         <div class="dropdown">
             <button href="#" class="dropbtn">Bedrooms <i class="fas fa-caret-down"></i></button>
             <div class="dropdown-content">
+                <h3>Bedrooms</h3>
                 <a href="#">1</a>
                 <a href="#">2</a>
                 <a href="#">3</a>
@@ -47,6 +40,7 @@
         <div class="dropdown">
             <button href="#" class="dropbtn">Bathrooms <i class="fas fa-caret-down"></i></button>
             <div class="dropdown-content">
+                <h3>Bathrooms</h3>
                 <a href="#">1</a>
                 <a href="#">2</a>
                 <a href="#">3</a>
@@ -55,22 +49,30 @@
         <div class="dropdown">
             <button href="#" class="dropbtn">Toilets <i class="fas fa-caret-down"></i></button>
             <div class="dropdown-content">
+                <h3>Toilets</h3>
                 <a href="#">1</a>
                 <a href="#">2</a>
                 <a href="#">3</a>
             </div>
         </div>
-        <a href="./search-houses/houses.html" class="span"><i class="fas fa-search"></i></a>
+        <a href="#" class="span"><i class="fas fa-search"></i></a>
         </div>
     </div>
-    <div class="section">
-        <div class="newsletter">Subscribe to Our NewsLetters</div>
-        <p>Be the first to know all lush deals and price updates. We won't spam</p>
-        <p>*pinkie swear*</p>
+    <div class="spec">
+        <div class="view-house">
+            <div class="">
+                <img src="house.png" alt="">
+            </div>
+            <div class="description">
+                <p>Estimated Price</p>
+                <p>N1,000,000 - N2,000,000</p>
+            </div>
+        </div>
+            <div class="house-location">
+                <h2>2 Bedroom Apartment for Rent</h2>
+                <h2>Off Admiralty Road Lekki Phase 1</h2>
+                <h2>2 Bathrooms</h2>
+            </div>
     </div>
-        <form action="">
-            <input type="text" placeholder="you@example.com">
-            <a href="#" class="button">Sign Me Up</a>
-        </form>
 </body>
 </html>
