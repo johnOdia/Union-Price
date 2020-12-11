@@ -32,7 +32,7 @@ body{
 }
 
 .dropbtn{
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     color: black;
     padding: 20px;
     margin-right: 30px;
