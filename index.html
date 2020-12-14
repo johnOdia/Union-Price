@@ -20,7 +20,9 @@
         <section id="home-screen">
             <div class="wrapper">
                 <div class="header">Union Price</div>
-                <h1>Get the worth of your next house</h1>
+                <div id="container">
+                    <span id="text"></span><span id="cursor"></span>
+                </div>
                 <section>
                     <ul class="list-item">
                         <li data-selection='rent' class="specify rent">Rent</li>
@@ -28,60 +30,77 @@
                     </ul>
                 </section>
                 <div class="box" id="box">
-                    <div class="dropdown">
+                    <div class="dropdown location">
                         <div class="dropbtn" id="dropbtn">
-                            <p>Location</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"
+                            <p class="name">Location</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"
                                 id="dropMenuBtn"></i>
                         </div>
-                        <div data-content="content" class="dropdown-content">
-                            <a>Ikorodu</a>
+                        <div data-name="content-location" data-content="content" class="dropdown-content content-location">
+                            <a class="first-content">Ikorodu</a>
                             <a>ikeja</a>
                             <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a>Ogudu</a>
+                            <a class="last-content">Ogudu</a>
                         </div>
                     </div>
-                    <div class="dropdown">
+                    <div class="dropdown housetype">
                         <div class="dropbtn" id="dropbtn">
                             <p>House Type</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"></i>
                         </div>
-                        <div data-content="content" class="dropdown-content">
-                            <a>Mini flat</a>
+                        <div data-name="content-type" data-content="content" class="dropdown-content content-type">
+                            <a class="first-content">Mini flat</a>
                             <a>Duplex</a>
-                            <a>Bungalow</a>
+                            <a class="last-content">Bungalow</a>
                         </div>
                     </div>
-                    <div class="dropdown">
+                    <div class="dropdown bedrooms">
                         <div class="dropbtn" id="dropbtn">
                             <p>Bedrooms</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"></i>
                         </div>
-                        <div data-content="content" class="dropdown-content">
-                            <a>1</a>
+                        <div data-name="content-bedrooms" data-content="content" class="dropdown-content content-bedrooms">
+                            <a class="first-content">1</a>
                             <a>2</a>
-                            <a>3</a>
+                            <a class="last-content">3</a>
                         </div>
                     </div>
-                    <div class="dropdown">
+                    <div class="dropdown bathrooms">
                         <div class="dropbtn" id="dropbtn">
                             <p>Bathrooms</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"></i>
                         </div>
-                        <div data-content="content" class="dropdown-content">
-                            <a>1</a>
+                        <div data-name="content-bathrooms" data-content="content" class="dropdown-content content-bathrooms">
+                            <a class="first-content">1</a>
                             <a>2</a>
-                            <a>3</a>
+                            <a class="last-content">3</a>
                         </div>
                     </div>
-                    <div class="dropdown">
+                    <div class="dropdown toilets">
                         <div class="dropbtn" id="dropbtn">
                             <p>Toilets</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"></i>
                         </div>
-                        <div data-content="content" class="dropdown-content">
-                            <a>1</a>
+                        <div data-name="content-toilets" data-content="content" class="dropdown-content content-toilets">
+                            <a class="first-content">1</a>
                             <a>2</a>
-                            <a>3</a>
+                            <a class="last-content">3</a>
                         </div>
                     </div>
-                    <div>
+                    <div class="search1">
                         <button href="./search-houses/houses.html" class="span" id="span"><i
                                 class="fas fa-search"></i></button>
+                    </div>
+                    <div class="search2">
+                        <div href="./search-houses/houses.html" class="span" id="span">Search</div>
                     </div>
                 </div>
 
@@ -93,59 +112,64 @@
         <!--------------------- results screen --------------------->
         <section id="results-screen">
             <div class="header2">Union Price</div>
+            <div class="refine-results">Refine Results</div>
             <div class="box2" id="box">
-                <div class="dropdown2">
+                <div class="dropdown2 location">
                     <div class="dropbtn2" id="dropbtn">
                         <p>Location</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn2" id="dropMenuBtn"></i>
                     </div>
-                    <div data-content="content" class="dropdown-content" id="dropdown-content">
+                    <div data-name="content-location" data-content="content" class="dropdown-content content-location" id="dropdown-content">
                         <a>Ikorodu</a>
                         <a>ikeja</a>
                         <a>Ogudu</a>
                     </div>
                 </div>
-                <div class="dropdown2">
+                <div class="dropdown2 housetype">
                     <div class="dropbtn2" id="dropbtn">
                         <p>House Type</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn2"></i>
                     </div>
-                    <div data-content="content" class="dropdown-content">
+                    <div data-name="content-type" data-content="content" class="dropdown-content content-type">
                         <a>Mini flat</a>
                         <a>Duplex</a>
                         <a>Bungalow</a>
                     </div>
                 </div>
-                <div class="dropdown2">
+                <div class="dropdown2 bedrooms">
                     <div class="dropbtn2" id="dropbtn">
                         <p>Bedrooms</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"></i>
                     </div>
-                    <div data-content="content" class="dropdown-content">
+                    <div data-name="content-bedrooms" data-content="content" class="dropdown-content content-bedrooms">
                         <a>1</a>
                         <a>2</a>
                         <a>3</a>
                     </div>
                 </div>
-                <div class="dropdown2">
+                <div class="dropdown2 bathrooms">
                     <div class="dropbtn2" id="dropbtn">
                         <p>Bathrooms</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"></i>
                     </div>
-                    <div data-content="content" class="dropdown-content">
+                    <div data-name="content-bathrooms" data-content="content" class="dropdown-content content-bathrooms">
                         <a>1</a>
                         <a>2</a>
                         <a>3</a>
                     </div>
                 </div>
-                <div class="dropdown2">
+                <div class="dropdown2 toilets">
                     <div class="dropbtn2" id="dropbtn">
                         <p>Toilets</p> <i data-name="btn" class="fas fa-caret-down dropMenuBtn"></i>
                     </div>
-                    <div data-content="content" class="dropdown-content">
+                    <div data-name="content-toilets" data-content="content" class="dropdown-content content-toilets">
                         <a>1</a>
                         <a>2</a>
                         <a>3</a>
                     </div>
                 </div>
-                <div>
-                    <button class="span"><i class="fas fa-search"></i></button>
+                <div class="search1">
+                        <button href="./search-houses/houses.html" class="span" id="span"><i
+                                class="fas fa-search"></i></button>
+                    </div>
+                <div class="search2">
+                    <div href="./search-houses/houses.html" class="span" id="span">Search</div>
                 </div>
             </div>
 

@@ -26,13 +26,39 @@ body{
     background-size: cover;
 }
 
-h1{
+#text{
     color: white;
     text-align: center;
     font-size: 35px;
     font-weight: 900;
-    margin-top: 90px;
     font-family: 'Poppins', sans-serif;
+}
+
+
+#container{
+    margin-top: 90px;
+    height: 40px;
+    text-align: center;
+}
+
+
+#cursor {
+	display: inline-block;
+	vertical-align: middle;
+	width: 3px;
+    height: 40px;
+    margin-bottom: 12px;
+	background-color: #fff;
+	animation: blink .75s step-end infinite;
+}
+
+@keyframes blink {
+	from, to { 
+		background-color: transparent 
+	}
+	50% { 
+		background-color: #fff; 
+	}
 }
 
 .list-item{
@@ -69,9 +95,8 @@ ul li{
     justify-content: center;
     border-radius: 20px;
     padding: 15px;
-    opacity: 0.8;
     background: #fff;
-    height: 60px;
+    height: 55px;
     overflow: hidden;
 }
 
@@ -79,53 +104,87 @@ ul li{
     color: rgb(85, 82, 82);
     padding: 10px 25px 20px 5px;
     margin-right: 27px;
-    font-size: 1em;
     font-weight: bold;
     border-right: 2px solid rgb(85, 82, 82);
+    height: 20px;
 }
 
-.dropdown-content{
+/* .dropbtn p {
+    font-size: 1.6em;
+} */
+
+.dropbtn div {
+    margin-top: 5px;
+}
+
+.dropbtn i {
+    font-size: 1.4em;
+}
+
+.dropdown-content, .dropdown-content2{
     display:none;
     position: absolute;
-    margin-top: 5px;
-    background-color:whitesmoke;
+    margin-top: 20px;
+    background-color: white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 5px;
     z-index: 1;
+    max-height: 190px;
+    overflow-y: scroll;
 }
+
+/* scrollbar */
+.dropdown-content2::-webkit-scrollbar,.dropdown-content::-webkit-scrollbar {
+    width: 5px;
+    margin-top: 3px;
+    height: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #b9aeae;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(58, 55, 55);
+  }
 
 p{
     display: inline;
 }
 
 .dropdown-content a {
-    color: black;
+    color: #605E5E;
     padding: 12px 16px;
+    margin: 0 10px;
+    border-radius: 5px;
     text-decoration: none;
     display: block;
+    cursor: pointer;
 }
 
 .fa-caret-down{
     cursor: pointer;
 }
-.fa-caret-down:hover{
-    color: rgb(201, 190, 190);;
-}
-
-
-.dropdown:hover .dropbtn{
-    display: block;
-}
 
 .span{
-    background-color: rgb(60, 60, 189);
+    background-color: #6528FF;
     color: white;
     padding:10px 10px 10px 12px;
     text-decoration: none;
     font-size: 25px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.search2{
+    display: none;
+}
+
+.search2 div{
+    border-radius: 6px;
 }
 
 .span:hover{
@@ -172,7 +231,7 @@ input{
 }
 
 .button{
-    background-color: rgb(56, 56, 255);
+    background-color: #6528FF;
     border: none;
     color: white;
     padding: 12px 20px;
@@ -194,7 +253,7 @@ main{
 }
 
 .header2{
-    color:rgb(60, 60, 189);
+    color:#6528FF;
     height: 2vw; 
     padding: 1em;
     font-size: 35px;
@@ -203,25 +262,32 @@ main{
     padding-left: 9%;
 }
 
+.refine-results{
+    color: #fff;
+    background-color: #6528FF;
+    text-align: center;
+    height: 35px;
+    width: 77%;
+    padding-top: 15px;
+    margin: auto;
+    margin-top: 25px;
+    border-radius: 6px;
+    display: none;
+    font-size: 1.2rem;
+}
+
 .box2{
     margin-left: 9%;
     display: flex;
     justify-content: flex-start;
     background: white;
     text-align: center;
-    /* margin-right: auto;
-    margin-left: auto; */
-    margin-top: 20px;
+     margin-top: 20px;
     border-radius: 20px;
     padding:15px;
     height: 60px;
     overflow: hidden;
 }
-
-/* .dropdown2{
-    position: relative;
-    display: inline-block;
-} */
 
 .dropbtn2{
     background-color: whitesmoke;
@@ -239,17 +305,10 @@ main{
 .dropbtn2 p{
     font-size: 1em;
 }
-/* 
-.dropdown-content2{
-    display:none;
-    position: absolute;
-    margin-top: 5px;
-    background-color:whitesmoke;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    border-radius: 5px;
-    z-index: 1;
-} */
+
+.dropbtn2 div {
+    margin-top: 2px;
+}
 
 .dropdown-content2 a {
     color: black;
@@ -259,7 +318,7 @@ main{
 }
 
 .span2{
-    background-color: rgb(56, 56, 255);
+    background-color: #6528FF;
     border: none;
     color: white;
     padding: 20px;
@@ -303,7 +362,7 @@ main{
 .price {
     width: 335px;
     height: 100px;
-    background: rgb(52, 52, 228);
+    background: #6528FF;
     color: white;
     border-radius: 7px;
     font-size: 1.5rem;
@@ -378,6 +437,14 @@ main{
     animation: loading 1s infinite linear;
 }
 
+.last-content{
+    margin-bottom: 10px !important;
+}
+
+.first-content{
+    margin-top: 10px !important;
+}
+
 @keyframes loading{
     0% {
         background-position: -100px;
@@ -396,20 +463,171 @@ body{
 
 
 
-
 /*--------- end of result section ---------- */
 
 
-@media screen and (max-width: 320px){
-    h1{
-        font-size: 23px;
+@media screen and (max-width: 450px){
+    .header, .header2{
+        font-size: 1.8rem;
+    }
+    #container{
+        margin-top: 40px;
+        padding: 20px;
+    }
+    #text{
+        font-size: 1.9em;
     }
     .specify{
         font-size: 20px;
     }
-    .box{
-        overflow: hidden;
+
+    /*re-position the elements in the dropdown menu*/
+    .box, .box2{
+        margin-top: 0;
+        overflow: initial;
+        background-color: initial;
+        display: grid;
+        grid-template-areas:
+         'location location'
+         'housetype bedrooms'
+         'bathrooms toilets'
+         'search search';
     }
+    #dropbtn{
+        border-right: initial;
+        height: 30px;
+        border-radius: 20px;
+        width: 100%;
+        border-radius: initial;
+        text-align: left;
+    }
+    .dropbtn div{
+        margin-left: 5px;
+    }
+    .dropdown{
+        border: 2px solid black;
+        background-color: white;
+    }
+    .location{
+        grid-area: location;
+    }
+    .housetype{
+        grid-area: housetype;
+    }
+    .bedrooms{
+        grid-area: bedrooms;
+    }
+    .bathrooms{
+        grid-area: bathrooms;
+    }
+    .toilets{
+        grid-area: toilets;
+    }
+    .search2{
+        grid-area: search;
+        display: block;
+        width: 95%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    .search1{
+        display: none;
+    }
+
+    /*re-position the elements inside each dropdown*/
+    /* .dropbtn{
+        height: 30px;
+        border-radius: 50px;
+        width: 100%;
+        border-radius: initial;
+        text-align: left;
+    } */
+    .dropdown-content{
+        margin-top: 2px;
+    }
+    .dropbtn i, .dropbtn2 i{
+        float: right;
+        left: 10px;
+        margin-right: 15px;
+    }
+    .dropdown, .dropdown2{
+        border-radius: 6px;
+        margin: 10px;
+        /* background-color: #fff; */
+    }
+    .error{
+       display: none;
+   }
+
+   /*second screen */
+   .box2{
+       text-align: center;
+       margin: auto;
+       /* margin-left: 20px; */
+       margin-top: 20px;
+       background: rgb(241, 239, 239);
+       height: 100%;
+       padding: 0;
+       border-radius: 0px;
+       display: none;
+   }
+
+   .refine-results{
+       display: block;
+   }
+
+   .dropbtn2{
+       text-align: left;
+       border-radius: 7px;
+       padding: 0;
+       padding-bottom: 20px;
+       padding-left: 6px;
+       padding-top: 3px;
+       background-color: #fff;
+   }
+
+    .dropbtn2 i {
+       margin-left: 20px;
+       margin-right: 0px;
+   }  
+
+   .dropbtn2 .fas{
+       margin-right: 5px;
+   }
+   .header2{
+       width: 100vw;
+   }
+   .house-img, .image{
+       width: 93%;
+   }
+   .price{
+       width: 93%;
+       margin: auto;
+   }
+   .image{
+       width: 84%;
+       margin-left: 10px;
+       margin-bottom: 5px;
+   }
+   .loader-price{
+       width: 84%;
+       margin: 0;
+       margin-left: 10px;
+   }
+   #result-display, .loader{
+       margin-top: 30px;
+       text-align: center;
+   }
+   
+   .spec{
+       display: block;
+   }
+ 
+   .house-info div{
+       width: 100%;
+       margin: 10px;
+       padding: 0;
+   }
 }
 
 
