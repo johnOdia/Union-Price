@@ -630,6 +630,48 @@ body{
    }
 }
 
+@media only screen and (max-width: 375px){
+    .header{
+        font-size: 1.4em;
+    }
+    #container{
+        margin-top: 0;
+    }
+    #text{
+        font-size: 1.4em;
+    }
+    .list-item{
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    .list-item li{
+        font-size: 1em;
+    }
+    .dropdown{
+        width: 7rem;
+        height: 47px;
+    }
+    .location{
+        width:92%;
+    }
+    .dropbtn{
+        padding: 2px 0px 0px 2px;
+        margin-bottom: 10px;
+    }
+    .dropbtn p, .dropbtn div{
+        font-size: 1em;
+    }
+    .dropbtn i{
+        margin-right: 5px;
+    }
+    .search2 div{
+        height: 20px;
+        font-size: 1.2em;
+        width: 88%;
+        margin: auto;
+    }
+}
+
 
 
 

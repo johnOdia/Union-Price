@@ -127,8 +127,7 @@ class UI {
                 parent.children[2] ? parent.children[2].remove() : ''
                 const newDiv = document.createElement('div')
                 const css = {
-                    color: 'rgb(60, 60, 189)',
-                    'font-size': '18px'
+                    color: 'rgb(60, 60, 189)'
                 }
                 parameter.style.color = 'rgb(60, 60, 189)'
                 parent.children[1].style.color = 'rgb(60, 60, 189)'
