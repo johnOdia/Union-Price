@@ -1,12 +1,12 @@
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: whitesmoke;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
     height: 100%;
-    width: 100%;
+    min-width: 1300px;
 }
+
 .header{
     background-color: black;
     opacity: 0.7;
@@ -109,10 +109,6 @@ ul li{
     height: 20px;
 }
 
-/* .dropbtn p {
-    font-size: 1.6em;
-} */
-
 .dropbtn div {
     margin-top: 5px;
 }
@@ -207,30 +203,12 @@ button:focus{
     margin-top: 20px;
 }
 
-.newsletter{
-    font-size: 40px;
-    font-weight: bold;
-}
-
 p{
     font-size: 25px;
     line-height: 20px;
 }
 
-form{
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-input{
-    border: 2px solid red;
-    padding: 12px 20px;
-    border-radius: 5px;
-    width: 25%;
-    font-size: 20px;
-}
-
-.button{
+.button, .newletterBtn{
     background-color: #6528FF;
     border: none;
     color: white;
@@ -240,6 +218,44 @@ input{
     font-size: 22px;
     border-radius: 4px;
     margin: 4px 2px;
+}
+
+.newsletter{
+    padding: 40px;
+}
+
+.section{
+    margin-bottom: 30px;
+}
+.section div{
+    font-weight: 500;
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 25px;
+}
+
+.section p{
+    color: gray;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+form{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input{
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    width: 25%;
+    font-size: 20px;
+}
+
+.newletterBtn{
+    border-radius: 8px;
+    font-size: 1.1em;
 }
 
 /*--------- result section ---------- */
@@ -262,6 +278,10 @@ main{
     padding-left: 9%;
 }
 
+.header2 a{
+    text-decoration: none;
+}
+
 .refine-results{
     color: #fff;
     background-color: #6528FF;
@@ -282,7 +302,7 @@ main{
     justify-content: flex-start;
     background: white;
     text-align: center;
-     margin-top: 20px;
+    margin-top: 20px;
     border-radius: 20px;
     padding:15px;
     height: 60px;
@@ -327,6 +347,10 @@ main{
     font-size: 18px;
     border-radius: 4px;
 }
+.search{
+    margin-top: 6px;
+
+}
 
 .display-error{
     color: red;
@@ -337,7 +361,6 @@ main{
 
 .result-wrapper{
     width: 83%;
-    /* overflow: hidden; */
     margin: auto;
 }
 
@@ -356,9 +379,6 @@ main{
     border-radius: 7px;
 }
 
-/* .view-house{
-    border: 2px solid black;
-} */
 .price {
     width: 335px;
     height: 100px;
@@ -389,7 +409,6 @@ main{
     position: absolute;
     height: 100%;
     width: 100%;
-    /* border: 2px solid black; */
     display: grid;
     grid-template-columns: 1fr 3fr;
     transition: 0.5s all ease;
@@ -410,9 +429,6 @@ main{
     margin-top: 5px;
 }
 
-/* .house-info-loader{
-    border: 2px solid black;
-} */
  .info1, .info2, .info3{
     background-color: #ccc; 
     margin: 30px 0px 30px 20px;
@@ -467,6 +483,13 @@ body{
 
 
 @media screen and (max-width: 450px){
+    body{
+        min-width: 100%;
+    }
+    article{
+        margin-left: -40px;
+        overflow: hidden;
+    }
     .header, .header2{
         font-size: 1.8rem;
     }
@@ -534,14 +557,6 @@ body{
         display: none;
     }
 
-    /*re-position the elements inside each dropdown*/
-    /* .dropbtn{
-        height: 30px;
-        border-radius: 50px;
-        width: 100%;
-        border-radius: initial;
-        text-align: left;
-    } */
     .dropdown-content{
         margin-top: 2px;
     }
@@ -553,17 +568,21 @@ body{
     .dropdown, .dropdown2{
         border-radius: 6px;
         margin: 10px;
-        /* background-color: #fff; */
     }
     .error{
        display: none;
    }
+   input{
+       display: block;
+       width: 90%;
+       margin-bottom: 5px;
+   }
 
    /*second screen */
+  
    .box2{
        text-align: center;
        margin: auto;
-       /* margin-left: 20px; */
        margin-top: 20px;
        background: rgb(241, 239, 239);
        height: 100%;
@@ -596,6 +615,7 @@ body{
    }
    .header2{
        width: 100vw;
+       margin-left: 10px;
    }
    .house-img, .image{
        width: 93%;
@@ -605,12 +625,12 @@ body{
        margin: auto;
    }
    .image{
-       width: 84%;
+       width: 95%;
        margin-left: 10px;
        margin-bottom: 5px;
    }
    .loader-price{
-       width: 84%;
+       width: 95%;
        margin: 0;
        margin-left: 10px;
    }
@@ -622,33 +642,65 @@ body{
    .spec{
        display: block;
    }
+
+   .house-info{
+    margin-top: 15px;
+    text-align: left;
+    margin-left: 5px;
+   }
  
    .house-info div{
        width: 100%;
        margin: 10px;
        padding: 0;
+       font-size: 1em;
    }
 }
 
-@media only screen and (max-width: 375px){
+
+@media screen and (max-width: 375px){
+    .box2{
+        width: 77%;
+    }
+    .dropdown2{
+        width: 83%;
+    }
+    .location2{
+        width: 92% !important;
+    }
+    #text{
+        font-size: 1.7em;
+    }
+    .dropdown{
+        width: 10rem;
+    }
+    .location{
+        width: 94%;
+    }
+    .dropbtn p, .dropbtn div{
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 360px){
     .header{
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
     #container{
         margin-top: 0;
     }
     #text{
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
     .list-item{
         margin-top: 30px;
         margin-bottom: 0;
     }
     .list-item li{
-        font-size: 1em;
+        font-size: 1.2em;
     }
     .dropdown{
-        width: 7rem;
+        width: 9rem;
         height: 47px;
     }
     .location{
@@ -665,12 +717,68 @@ body{
         margin-right: 5px;
     }
     .search2 div{
+        height: 28px;
+        font-size: 1.4em;
+        width: 91%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .header{
+        font-size: 1.4em;
+    }
+    #container{
+        margin-top: 0;
+    }
+    #text{
+        font-size: 1.4em;
+    }
+    .list-item{
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    .list-item li{
+        font-size: 1.2em;
+    }
+    .dropdown{
+        width: 8.5rem;
+        height: 47px;
+    }
+    .location{
+        width:92%;
+    }
+    .dropbtn{
+        padding: 2px 0px 0px 2px;
+        margin-bottom: 10px;
+    }
+    
+    .dropbtn p, .dropbtn div{
+        font-size: 1em;
+    }
+
+    .dropbtn i{
+        margin-right: 5px;
+    }
+
+    .dropbtn2 p, .dropbtn2 div{
+        font-size: .7em;
+    }
+    .search2 div{
         height: 20px;
         font-size: 1.2em;
         width: 88%;
         margin: auto;
     }
 }
+
+body{
+    background: rgb(241, 236, 236);
+}
+
+
+
+
 
 
 

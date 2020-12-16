@@ -19,6 +19,7 @@ const contentBedrooms = document.querySelectorAll('.content-bedrooms')
 const contentBathrooms = document.querySelectorAll('.content-bathrooms')
 const contentToilets = document.querySelectorAll('.content-toilets')
 const refineResults = document.querySelector('.refine-results')
+const body = document.querySelector('body')
 let userSpecification = 'rent'
 const inputParams = {
     Location: null,
@@ -33,10 +34,10 @@ class UI {
     anim() {
         // List of sentences
         var _CONTENT = [
-            "Twinkle, twinkle, little star",
-            "How I wonder what you are",
-            "Up above the world so high",
-            "Like a diamond in the sky"
+            "Get the worth of your next house!",
+            "Select your prefered location and facilities",
+            "Click on the search button",
+            "Make more queries from the results page"
         ];
 
         // Current sentence being processed
@@ -141,7 +142,6 @@ class UI {
     //highlight dropdown content
     highlightSelected(e) {
         //get unique id to identify the dropdown content section
-        console.log(e.parentNode.getAttribute('data-name'))
         const dropdownSection = e.parentNode.getAttribute('data-name')
 
         //pass the section to a function to unhighlight
@@ -157,6 +157,7 @@ class UI {
             "background-color": '#6528FF'
         }
         Object.assign(e.style, css)
+        dropdownContent.forEach(element => element.style.display = 'none')
     }
 
     //unhighlight previously highlighted
@@ -172,7 +173,7 @@ class UI {
 
     //Add an input parameter
     inputValidation() {
-        const css = { color: 'rgb(247, 41, 41)' };
+        const css = { color: '#f50233' };
 
         searchBtn.forEach(button => {
             button.addEventListener('click', () => {
@@ -247,6 +248,10 @@ class UI {
     }
 
     renderResultsPage() {
+        //change bg-color of body        
+        const bodyCss = {background: 'white'}
+        Object.assign(body.style,bodyCss)
+
         //hide newsletter section
         newsletter.style.display = 'none'
 
