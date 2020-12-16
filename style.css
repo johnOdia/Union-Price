@@ -680,6 +680,13 @@ body{
     .dropbtn p, .dropbtn div{
         font-size: 1.2em;
     }
+
+    .section div {
+        font-size: 1.5em;
+    }
+    .section p{
+        font-size: 1.2em;
+    }
 }
 
 @media only screen and (max-width: 360px){

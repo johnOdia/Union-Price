@@ -35,9 +35,10 @@ class UI {
         // List of sentences
         var _CONTENT = [
             "Get the worth of your next house!",
+            "Make a search query for either rent or buy",
             "Select your prefered location and facilities",
             "Click on the search button",
-            "Make more queries from the results page"
+            "Make more queries from the results screen!"
         ];
 
         // Current sentence being processed
@@ -195,8 +196,6 @@ class UI {
                     error.forEach(err => err.innerText = 'Please select input for all fields!')
                     return
                 }
-                console.log('validated');
-
                 this.renderResultsPage()
             })
         })
@@ -256,7 +255,6 @@ class UI {
         newsletter.style.display = 'none'
 
         //hide dropdown menu on mobile screen
-        console.log(refineResults.style.display);
         if (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             boxContainer.style.display = 'none'
         }
