@@ -382,7 +382,7 @@ class RequestFromAPI {
     };
 
     fetch(
-      `http://unionpriceapi.herokuapp.com/estimated-${userSpecification}`,
+      `https://unionpriceapi.herokuapp.com/estimated-${userSpecification}`,
       requestOptions
     )
       .then((response) => response.text())
