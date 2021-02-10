@@ -348,7 +348,7 @@ class UI {
       <div class="house-info">
         <div> Result for a ${bedroom} Bedroom(s), ${bathroom} Bathroom(s) </div>
         <div>and ${toilet} Toilet(s) ${houseType} in ${location}</div>
-        <div><p>Want to view a property website?</p><a href="https://olist.ng/house-for-sale" target="blank"> Click here</a></div> 
+        <div><a href="https://olist.ng/house-for-sale" target="blank"> Click here to view a property website</a></div> 
       </div>
     </div>
     `;
