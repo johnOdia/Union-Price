@@ -126,11 +126,15 @@ class UI {
         const parent = event.target.parentNode.parentNode.children[0];
         const parameter = parent.children[0];
         inputParams[parameter.innerText] = event.target.innerText;
+
+        localStorage.setItem("parameters", JSON.stringify(inputParams));
+
         parent.children[2] ? parent.children[2].remove() : "";
         const newDiv = document.createElement("div");
         const css = {
           color: "rgb(60, 60, 189)",
         };
+
         parameter.style.color = "rgb(60, 60, 189)";
         parent.children[1].style.color = "rgb(60, 60, 189)";
         Object.assign(newDiv.style, css);
@@ -201,7 +205,7 @@ class UI {
               ? (Object.assign(dropBtn[0].style, css),
                 Object.assign(dropBtn[5].style, css))
               : "";
-            val === "House Type"
+            val === "house-type"
               ? (Object.assign(dropBtn[1].style, css),
                 Object.assign(dropBtn[6].style, css))
               : "";
@@ -223,6 +227,7 @@ class UI {
           );
           return;
         }
+
         this.renderResultsPage();
       });
     });
@@ -264,7 +269,7 @@ class UI {
       if (e.target.getAttribute("data-selection") === "buy") {
         specify.forEach((el) => (el.style.textDecoration = "none"));
         e.target.style.textDecoration = "underline";
-        return (userSpecification = "buy");
+        return (userSpecification = "price");
       }
     });
   }
@@ -309,31 +314,82 @@ class UI {
     }
 
     //hide screen loader and display result
-    setTimeout(() => {
-      resultLoader.classList.add("hide");
-      displayResult.style.display = "block";
-      this.makeRequest()
-    }, 3000);
+    RequestFromAPI.makeRequest();
+    // setTimeout(() => {
+    //   resultLoader.classList.add("hide");
+    //   displayResult.style.display = "block";
+    //   RequestFromAPI.makeRequest();
+    // }, 3000);
   }
 
-  makeRequest() {
-    const formdata = new FormData();
-    formdata.append("house-type", "Flat");
-    formdata.append("locations", "Surulere");
-    formdata.append("bedroom", "5");
-    formdata.append("bathroom", "5");
-    formdata.append("toilet", "6");
+  static numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
+  static renderResults(result, raw) {
+    this
+    const { location, houseType, bedroom, bathroom, toilet } = JSON.parse(raw);
 
-    var requestOptions = {
+    const resultFromAPI = JSON.parse(result);
+
+    resultLoader.classList.add("hide");
+
+    displayResult.innerHTML = `
+    <div class="spec">
+      <div class="view-house">
+        <div>
+            <img class="house-img" src="house.png" alt="">
+        </div>
+        <div class="price">
+            <div>Estimated ${userSpecification}</div> 
+            <p>₦${UI.numberWithCommas(resultFromAPI["House Price"])}</p>
+        </div>
+      </div>
+      <div class="house-info">
+        <div> Result for a ${bedroom} Bedroom(s), ${bathroom} Bathroom(s) </div>
+        <div>and ${toilet} Toilet(s) ${houseType} in ${location}</div>
+        <div><p>Want to view a property website?</p><a href="https://olist.ng/house-for-sale" target="blank"> Click here</a></div> 
+      </div>
+    </div>
+    `;
+
+    displayResult.style.display = "block";
+  }
+}
+
+class RequestFromAPI {
+  static makeRequest() {
+    const params = JSON.parse(localStorage.getItem("parameters"));
+
+    const { Location, HouseType, Bedrooms, Bathrooms, Toilets } = params;
+
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+      location: Location,
+      houseType: params["House Type"],
+      bedroom: Bedrooms,
+      bathroom: Bathrooms,
+      toilet: Toilets,
+    });
+
+    const requestOptions = {
       method: "POST",
-      body: formdata,
+      headers: myHeaders,
+      body: raw,
       redirect: "follow",
     };
 
-    fetch("https://rent-pred.herokuapp.com/predict", requestOptions)
+    fetch(
+      `http://unionpriceapi.herokuapp.com/estimated-${userSpecification}`,
+      requestOptions
+    )
       .then((response) => response.text())
-      .then((result) => console.log(result))
+      .then((result) => {
+        UI.renderResults(result, raw);
+        console.log(result);
+      })
       .catch((error) => console.log("error", error));
   }
 }
