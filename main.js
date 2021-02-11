@@ -327,10 +327,14 @@ class UI {
   }
 
   static renderResults(result, raw) {
-    this
     const { location, houseType, bedroom, bathroom, toilet } = JSON.parse(raw);
 
     const resultFromAPI = JSON.parse(result);
+    result = resultFromAPI["House Price"]
+
+    if (result > 5000000  && userSpecification === 'rent') result = 'Unavailable!'
+    if (result < 100000  && userSpecification === 'rent') result = 'Unavailable!'
+    if (typeof result === 'number') result = '₦ ' + UI.numberWithCommas(result)
 
     resultLoader.classList.add("hide");
 
@@ -342,7 +346,7 @@ class UI {
         </div>
         <div class="price">
             <div>Estimated ${userSpecification}</div> 
-            <p>₦${UI.numberWithCommas(resultFromAPI["House Price"])}</p>
+            <p>${result}</p>
         </div>
       </div>
       <div class="house-info">
@@ -381,14 +385,15 @@ class RequestFromAPI {
       redirect: "follow",
     };
 
+    const rentOrBuy = userSpecification === 'price' ? 'rent' : 'price';
+
     fetch(
-      `https://unionpriceapi.herokuapp.com/estimated-${userSpecification}`,
+      `https://unionpriceapi.herokuapp.com/estimated-${rentOrBuy}`,
       requestOptions
     )
       .then((response) => response.text())
       .then((result) => {
         UI.renderResults(result, raw);
-        console.log(result);
       })
       .catch((error) => console.log("error", error));
   }
